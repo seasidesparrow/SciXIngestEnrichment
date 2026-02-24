@@ -1,12 +1,12 @@
 [project]
-name = "adsenrich"
+name = "scixenrich"
 version = "1.0.0"
-description = "ADS Enrichment Pipeline library"
+description = "SciX Enrichment Pipeline library"
 authors = [{ name = "Matthew Templeton", email = "matthew.templeton@cfa.harvard.edu"}]
 license = { text = "MIT" }
 readme = "README.md"
-repository = "https://github.com/adsabs/ADSIngestEnrichment"
-documentation = "https://adsenrich.readthedocs.io"
+repository = "https://github.com/adsabs/SciXIngestEnrichment"
+documentation = "https://scixenrich.readthedocs.io"
 classifiers = [
     "Development Status :: 2 - Pre-Alpha",
     "Intended Audience :: Developers",
@@ -15,52 +15,52 @@ classifiers = [
     "Topic :: Software Development :: Libraries",
 ]
 packages = [
-    "adsenrich",
+    "scixenrich",
 ]
 
 dependencies = [
-    'unidecode==0.4.21',
-    'adsputils==1.5.2',
-    'roman==4.2',
+    'unidecode==1.4.0',
+    'SciXPipelineUtils @ git+https://github.com/adsabs/SciXPipelineUtils@v0.6.2',
+    'roman==5.2',
 ]
 
 
 [project.urls]
-Source = "https://github.com/adsabs/ADSIngestEnrichment"
-Documentation = "https://adsenrich.readthedocs.io"
+Source = "https://github.com/adsabs/SciXIngestEnrichment"
+Documentation = "https://scixenrich.readthedocs.io"
 
 
 [project.optional-dependencies]
 dev = [
-    'black==23.1.0',
-    'flake8==5.0.4',
-    'isort==5.12.0',
-    'pytest==6.2.5',
-    'pyupgrade==2.29.1',
-    'pytest-mock==3.6.1',
-    'pre-commit==2.16.0',
-    'coveralls==3.3.1',
-    'mock==4.0.3',
-    'coverage==6.2',
-    'pytest-cov==3.0.0',
-    'pytest-cookies==0.6.1',
+    'black==26.1.0',
+    'flake8==7.3.0',
+    'isort==7.0.0',
+    'pytest==9.0.2',
+    'pyupgrade==3.21.2',
+    'pytest-mock==3.15.1',
+    'pre-commit==4.5.1',
+    'coveralls==4.0.2',
+    'mock==5.2.0',
+    'coverage==7.13.4',
+    'pytest-cov==7.0.0',
+    'pytest-cookies==0.7.0',
     'semantic-release==0.1.0',
 ]
 docs = [
-    'Sphinx==4.3.1',
-    'myst-parser==0.15.2',
-    'sphinx-rtd-theme==1.0.0'
+    'Sphinx==7.2.6',
+    'myst-parser==2.0.0',
+    'sphinx-rtd-theme==2.0.0'
 ]
 
 
 [tool.semantic_release]
 branch = "main"
 version_toml = "pyproject.toml:project.version"
-version_variable = "adsenrich/version.py:__version__"
+version_variable = "scixenrich/version.py:__version__"
 build_command = "flit build"
 
 [tool.pytest.ini_options]
-addopts = "-v -Wdefault --cov=adsenrich"
+addopts = "-v -Wdefault --cov=scixenrich"
 cache_dir = ".tmp/"
 
 [tool.coverage.run]
@@ -72,7 +72,7 @@ skip_covered = true
 
 [tool.isort]
 profile = "black"
-known_first_party = ["adsenrich", "tests"]
+known_first_party = ["scixenrich", "tests"]
 
 [tool.black]
 line-length = 99 # override black's default line-length
@@ -85,7 +85,7 @@ build-backend = "flit_core.buildapi"
 # see setup.py for explanation of these
 [xsetup.entry_points]
 console_scripts = [
-    "adsenrich=adsenrich.cli:cli",
+    "scixenrich=scixenrich.cli:cli",
 ]
 [xsetup]
 scripts = [

@@ -4,10 +4,10 @@ import re
 import roman
 import string
 
-from adsputils import load_config
+from SciXPipelineUtils.utils import load_config, u2asc
 
-from adsenrich.data import *
-from adsenrich.utils import issn2info, name2bib, u2asc
+from scixenrich.data import *
+from scixenrich.utils import issn2info, name2bib
 
 proj_home = os.getenv("PWD", None)
 conf = load_config(proj_home=proj_home)
