@@ -19,7 +19,7 @@ packages = [
 ]
 
 dependencies = [
-    'unidecode==1.4.0',
+    'unidecode==1.2.0',
     'SciXPipelineUtils @ git+https://github.com/adsabs/SciXPipelineUtils@v0.6.2',
     'roman==5.2',
 ]
