@@ -60,7 +60,7 @@ version_variable = "ingestenrich/version.py:__version__"
 build_command = "flit build"
 
 [tool.pytest.ini_options]
-addopts = "-v -Wdefault --cov=scixenrich"
+addopts = "-v -Wdefault --cov=ingestenrich"
 cache_dir = ".tmp/"
 
 [tool.coverage.run]
